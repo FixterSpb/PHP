@@ -45,13 +45,15 @@ function translit($str){
         'я' => 'ya'
     ];
     $newStr = '';
-    for ($i = 0; $i < mb_strlen($str, 'utf8'); $i++){
-        $newStr .= $letters[mb_strcut($str, 2 * $i, 2)]; //Возможно существует более простой метод работы с кириллицей?
+    for ($i = 0; $i < strlen($str); $i++){
+        $symbol = mb_substr(mb_strtolower($str), $i, 1, "utf8");
+        if (isset($letters[$symbol])){
+            $newStr .= $letters[$symbol];
+        }else{
+            $newStr .= $symbol;
+        }
     }
 
     return $newStr;
 }
-echo translit("привет");
-//for ($i = 0; $i < mb_strlen($str, 'utf8'); $i++){
-//    echo $i . ": " . mb_strcut($str, 2 * $i, 2) . " ";
-//}
+echo translit('Проверка задания № 4.<br>');

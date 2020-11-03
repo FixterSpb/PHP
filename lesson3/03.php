@@ -17,17 +17,7 @@ $cities = array(
     "Рязанская область" => ["Рязань", "Александро-Невский", "Ермишь", "Захарово"]
 );
 
-//for ($i = 0; $i < sizeof($cities); $i++){
-//    for ($j = 0; $j < sizeof($cities[$i]); $j++){
-//        echo $cities[$i][$j];
-//    }
-//
-//}
-
 foreach ($cities as $key => $value){
-    echo $key . ":<br>";
-    for ($j = 0; $j < sizeof($cities[$key]); $j++){
-        echo $cities[$key][$j] . ($j != sizeof($cities[$key]) - 1 ? ", " : ".<br>");
-    }
+    echo "<b>$key</b>:<br>" . implode(", ", $value) . "<br>";
 }
 

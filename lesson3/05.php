@@ -7,5 +7,5 @@ function replaceSpace($str){
     return str_replace(" ", "_", $str);
 }
 
-echo replaceSpace("Привет, мир");
+echo replaceSpace("Проверка задания № 5.<br>");
 
