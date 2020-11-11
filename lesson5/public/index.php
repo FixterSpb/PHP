@@ -7,6 +7,12 @@ define('ACTIONS', ENGINE . 'actions/');
 define('HELPERS', ENGINE . 'helpers/');
 define('TEMPLATES', DOC_ROOT . 'templates/');
 
+
+require DOC_ROOT . 'config/db.php';
+require HELPERS . 'db_func.php';
+fillDB($db);
+die;
+
 require HELPERS . 'helper.php';
 
 

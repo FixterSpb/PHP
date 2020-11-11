@@ -1,5 +1,5 @@
 <?php
-    $title = "Урок 4";
+    $title = "Урок 5";
     require TEMPLATES . 'head.php';
-    require TEMPLATES . 'main.php';
+    require TEMPLATES . 'gallery.php';
     require TEMPLATES . 'endPage.php';
