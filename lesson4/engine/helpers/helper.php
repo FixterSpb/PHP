@@ -1,33 +1,5 @@
 <?php
 
-if(!function_exists('getJSON')){
-    function getJSON(){
-        $albumId = rand(1, 100);
-
-        if (!($data = file_get_contents('http://jsonplaceholder.typicode.com/photos?albumId=' . $albumId))) {
-            http_response_code(503);
-            return require(TEMPLATES . '503.php');
-        }
-        return $data;
-    }
-}
-
-if(!function_exists('getGallery4')){
-
-	function getGallery(){
-		$images = json_decode(getJSON());
-		$result = "";
-		foreach ($images as $item){
-		    $result .= "
-                <a href='$item->url' target='_blank'>
-                    <img src='$item->thumbnailUrl' alt='$item->title' title='$item->title'>
-                </a>";
-        }
-		return $result;
-	}
-
-}
-
 if(!function_exists('getGallery1')){
 
     function getGallery1(){
