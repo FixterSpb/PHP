@@ -1,20 +1,5 @@
 <?php
 
-if(!function_exists('showError')){
-    function showError($code){
-        http_response_code($code);
-        return require TEMPLATES . $code . '.php';
-    }
-}
-
-if(!function_exists('writeLog')){
-
-    function writeLog($log, $text){
-        $filename = LOGS . $log . "_". date('dmY') . '.txt';
-        file_put_contents($filename, date('H:i:s') . " " . $text . "\n", FILE_APPEND);
-    }
-}
-
 if(!function_exists('view')){
 
     /**

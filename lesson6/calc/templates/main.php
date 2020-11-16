@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>404</title>
+    <script src="js/main.js"></script>
+    <title><?= isset($title) ? $title : 'Калькулятор'?></title>
 </head>
 <body>
-	<h1>404 Страница не найдена</h1>
+    <?= $content ?>
 </body>
 </html>
+
