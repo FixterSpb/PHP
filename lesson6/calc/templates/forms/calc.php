@@ -1,7 +1,7 @@
 <form action="<?= $action ?>" >
     <div style="display: flex; flex-wrap: wrap">
     <div>
-        <input type="number" name="num1" required value="<?= isset($num1) ? $num1 : ''?>">
+        <input type="number" name="num1" required value="<?= isset($num1) ? $num1 : ''?>" onkeydown="return inputValidate(this, event)">
         <?php if (isset($errors['num1'])): ?>
             <p style="color: indianred; margin: 0; padding: 0; max-width: 150px"><?= $errors['num1'] ?></p>
         <?php endif; ?>
@@ -15,7 +15,7 @@
         </select>
     </div>
     <div>
-        <input type="number" name="num2" required value="<?= isset($num2) ? $num2 : ''?>">
+        <input type="number" name="num2" required value="<?= isset($num2) ? $num2 : ''?>" onkeydown="return inputValidate(this, event)">
         <?php if (isset($errors['num2'])): ?>
             <p style="color: indianred; margin: 0; padding: 0; max-width: 150px"><?= $errors['num2'] ?></p>
         <?php endif; ?>
