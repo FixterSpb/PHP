@@ -18,6 +18,8 @@
     function showPageEdit($title, array $params){
         $content = view('parts/header',
                 [
+                    'modeLink' => '/editMode',
+                    'modeMess' => "Список товаров",
                     'title' => $title,
                 ]
             ) . view('forms/editProduct', $params);
@@ -52,10 +54,32 @@
             showPageEdit($title,
                 [
                     'action' => $action,
-                    'post' => $post,
+                    'product' => $post,
                     'errors' => $errors,
                     'statusList' => $statusList,
                 ]);
+        }
+
+        if($action !== 'create' && $action !== 'update'){
+
+            abort(404);
+        }
+
+//        var_dump($_FILES);
+//        echo "<br>";
+////        var_dump
+//        exit;
+        if($_FILES['uploadImg']['tmp_name'] !== ''){
+            $tmp = explode('.', $_FILES['uploadImg']['name']);
+            $ext = end($tmp);
+            $fileName = str_replace('.tmp', '.' . $ext, basename($_FILES['uploadImg']['tmp_name']));
+            echo $fileName;
+//            $path = 'd:/temp/upload/';
+            move_uploaded_file($_FILES['uploadImg']['tmp_name'], UPLOAD_FILE . $fileName);
+            $post['img'] = $fileName;
+        }else{
+            $tmp = explode('/', $post['img']);
+            $post['img'] = end($tmp);
         }
 
         switch ($action){
@@ -63,13 +87,15 @@
                 dbCreateProduct($dbConnection, $post);
                 break;
             case 'update':
-                print_r($post);
-                die;
                 dbUpdateProduct($dbConnection, $post);
                 break;
             default:
+                echo $action;
+                die;
                 abort(404);
         }
+
+        header("Location: /editMode");
     }
 
     if ($_SERVER['REQUEST_METHOD'] === 'GET'){
@@ -80,7 +106,7 @@
         $action = dbEscape($dbConnection, $_GET['action']);
 
         if ($action === 'create'){
-            showPageEdit($title,
+            showPageEdit('Добавление товара',
                 [
                     'action' => $action,
                     'statusList' => $statusList,
@@ -109,7 +135,7 @@
                 [
                     'action' => $action,
                     'id' => $id,
-                    'post' => $product,
+                    'product' => $product,
                     'statusList' => $statusList,
                 ]);
         }

@@ -1,8 +1,0 @@
-00:40:38   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
-01:51:19   Ошибка запроса к базе данных: 1054Unknown column '$status' in 'where clause'
-01:51:21   Ошибка запроса к базе данных: 1054Unknown column '$status' in 'where clause'
-01:52:04   Ошибка запроса к базе данных: 1054Unknown column 'active' in 'where clause'
-01:52:05   Ошибка запроса к базе данных: 1054Unknown column 'active' in 'where clause'
-01:52:20   Ошибка запроса к базе данных: 1054Unknown column 'active' in 'where clause'
-01:52:28   Ошибка запроса к базе данных: 1054Unknown column 'active' in 'where clause'
-02:22:17   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 6

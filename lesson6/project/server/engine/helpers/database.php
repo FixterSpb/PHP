@@ -49,7 +49,7 @@
     if (!function_exists('dbGetProducts')){
         function dbGetProducts($link, $status = 'active'){
             $query = "SELECT * FROM `products` WHERE `status` = '$status';";
-            return correctSrcImg(dbQuery($link, $query));
+            return correctPathImg($link, dbQuery($link, $query));
 
         }
     }
@@ -57,7 +57,7 @@
     if (!function_exists('dbGetAllProducts')){
         function dbGetAllProducts($link){
             $query = "SELECT * FROM `products`;";
-            return correctSrcImg(dbQuery($link, $query));
+            return correctPathImg($link, dbQuery($link, $query));
 
         }
     }
@@ -65,12 +65,12 @@
     if(!function_exists('dbGetProductById')){
         function dbGetProductById($link, $id){
             $query = "SELECT * FROM `products` WHERE `id`=$id";
-            return correctSrcImg(dbQuery($link, $query))[0];
+            return correctPathImg($link, dbQuery($link, $query))[0];
         }
     }
 
-    if (!function_exists('correctSrcImg')){
-        function correctSrcImg(array $arr){
+    if (!function_exists('correctPathImg')){
+        function correctPathImg($link, array $arr){
             $result = [];
             foreach ($arr as $key => $el){
                 $result[$key] = $el;
@@ -135,6 +135,30 @@
         }
     }
 
+    if(!function_exists('dbCreateProduct')){
+        function dbCreateProduct($link, $data){
+//            echo "INSERT INTO `products`
+//                        (`name`, `img`, `price`, `desc`, `status`)
+//                        VALUES(
+//                        '{$data['name']}',
+//                        '{$data['img']}',
+//                        '{$data['price']}',
+//                        '{$data['desc']}',
+//                        '{$data['status']}');";
+//            die;
+            dbQuery($link,
+                "INSERT INTO `products` 
+                        (`name`, `img`, `price`, `desc`, `status`)
+                        VALUES(
+                        '{$data['name']}',
+                        '{$data['img']}',
+                        '{$data['price']}',
+                        '{$data['desc']}',
+                        '{$data['status']}');"
+            );
+        }
+    }
+
     if(!function_exists('dbDeleteProduct')){
         function dbDeleteProduct($link, $id){
             return dbQuery($link,
@@ -147,6 +171,7 @@
         function dbUpdateProduct($link, $data){
             return dbQuery($link,
                 "UPDATE `products` SET 
+                        `name` = '{$data['name']}',
                         `img`= '{$data['img']}',
                         `price`={$data['price']},
                         `desc`='{$data['desc']}',

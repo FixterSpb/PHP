@@ -9,7 +9,7 @@ function handleFileSelect(event){
     // Closure to capture the file information.
     reader.onload = (function(theFile) {
         return function(e) {
-            let img = document.getElementById('uploadImage');
+            let img = document.getElementById('img');
             console.dir(img);
             img.src = e.target.result;
         };
@@ -19,4 +19,4 @@ function handleFileSelect(event){
     reader.readAsDataURL(file);
 }
 
-document.getElementsByName('img')[0].addEventListener('change', handleFileSelect, false);
+document.getElementsByName('uploadImg')[0].addEventListener('change', handleFileSelect, false);

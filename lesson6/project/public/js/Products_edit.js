@@ -1,10 +1,5 @@
 Vue.component('productItem',{
     props: ['product'],
-    data() {
-        return{
-
-        }
-    },
     methods: {
         productDelete: function(id){
             return "location.href = '/edit/?id=" + id + "&action=delete'";
@@ -17,7 +12,6 @@ Vue.component('productItem',{
                 <img class="product__image" :src="product.img" alt="">
                 <p class="product__name">{{product.name}}</p>
             </a>
-            <!-- TODO Звёзды  -->
             <p class="product__price">{{ product.price }} руб.</p>   
                         
             <button v-if="product.status == 'active' " :onclick="productDelete(product.id)">Удалить</button>
@@ -26,7 +20,6 @@ Vue.component('productItem',{
 });
 
 Vue.component('products-edit', {
-    props: ['mode'],
     data() {
         return {
             products: [],
@@ -34,15 +27,12 @@ Vue.component('products-edit', {
     },
 
     mounted(){
-        this.$parent.getJSON('api/allProducts')
+        this.$parent.getJSON('api/allProducts/')
             .then(data => {
                 for (let el of data) {
                     this.products.push(el);
                 }
             });
-
-        console.dir(this);
-
     },
 
     template:

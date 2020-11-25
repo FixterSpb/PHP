@@ -1,6 +1,6 @@
 <?php
 
-    $result = '';
+    $result = [];
 
     if (!$req = explode('/', $_SERVER['REQUEST_URI'])[2]){
         header("Location: /");
@@ -18,5 +18,5 @@
     }
 
     //Не уверен в правильности, но, вроде, работает
-    print json_encode($result);
+    echo json_encode($result);
     exit;

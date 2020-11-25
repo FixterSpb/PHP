@@ -5,7 +5,8 @@
     $modeMess = "Режим редактирования";
 
 
-    $content = view('parts/header',
+    $content =
+        view('parts/header',
         [
             'title' => $title,
             'modeLink' => $modeLink,

@@ -13,7 +13,14 @@ define('CONFIG', DOC_ROOT . 'config/');
 define('DATA', DOC_ROOT . 'data/');
 define('LOGS', DATA . 'logs/');
 
+/*
+ * Обе константы указывают в одну папку, однако для загрузки на локальный сервер
+ * необходим полный путь, а для отображения на странице - относительный.
+ *
+ * Во всяком случае, у меня иначе не получается
+ */
 define('UPLOAD_IMG', '/img/');
+define('UPLOAD_FILE', __DIR__ . UPLOAD_IMG);
 
 require  HELPERS . 'helper.php';
 
