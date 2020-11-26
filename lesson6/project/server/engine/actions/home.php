@@ -4,14 +4,12 @@
     $modeLink = '/editMode';
     $modeMess = "Режим редактирования";
 
-
-    $content =
-        view('parts/header',
+    $header = view('parts/header',
         [
-            'title' => $title,
-            'modeLink' => $modeLink,
-            'modeMess' => $modeMess
-        ]) .
-        view('parts/products', []);
+            'menuList' => getMainMenuList($title),
+            'title' => 'Каталог товаров'
+        ]
+    );
+    $content = view('parts/products', []);
 
-    require PAGES . 'home.php';
+require PAGES . 'home.php';

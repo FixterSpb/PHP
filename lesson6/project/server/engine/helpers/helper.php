@@ -1,5 +1,7 @@
 <?php
 
+require HELPERS . 'devFunc.php';
+
 if(!function_exists('abort')){
     function abort($code){
         http_response_code($code);
@@ -77,5 +79,35 @@ if(!function_exists('validate')){
         }
 
         return $errors;
+    }
+}
+
+if(!function_exists('array_get')){
+    function array_get(array $arr, $key, $default = null){
+        return isset($arr[$key]) ? $arr[$key] : $default;
+    }
+}
+
+if(!function_exists('getMainMenuList')){
+    function getMainMenuList($active = null){
+        return
+        [
+            [
+                'name'=> 'Каталог товаров',
+                'link' => '/',
+                'active' => $active === 'Каталог товаров',
+            ],
+            [
+                'name' => 'Войти',
+                'link' => '/',
+                'active' => $active === 'Войти'
+            ],
+            [
+                'name' => 'Корзина',
+                'link' => '/cart',
+                'active' => $active === 'Корзина'
+            ],
+
+        ];
     }
 }

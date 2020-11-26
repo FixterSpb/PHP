@@ -95,7 +95,7 @@ h1 {
 
 header {
   background-color: #A9A9A9;
-  margin-bottom: 30px;
+  margin: 0;
 }
 
 .mainMenu {
@@ -108,7 +108,7 @@ header {
 .mainMenu__item {
   display: block;
   border: 1px solid #ccc;
-  border-radius: 5px 5px 0 0;
+  border-radius: 0 0 5px 5px;
 }
 .mainMenu__item:hover {
   background-color: #bbb;
@@ -117,9 +117,6 @@ header {
   background-color: #ccc;
 }
 .mainMenu__item-active {
-  display: block;
-  border: 1px solid #ccc;
-  border-radius: 5px 5px 0 0;
   background-color: #ddd;
 }
 .mainMenu__link {
@@ -136,8 +133,5 @@ header {
 .mainMenu__link:active {
   color: cadetblue;
 }
-.mainMenu__link-active {
-  pointer-events: none;
-}
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style1.css.map */

@@ -26,6 +26,7 @@ const app = new Vue({
                 })
         },
         putJSON(url, data) {
+            console.dir(data);
             return fetch(url, {
                 method: 'PUT',
                 headers: {

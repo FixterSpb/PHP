@@ -4,7 +4,7 @@
     $modeLink = '/';
     $modeMess = "Главная";
 
-    if (!$_GET['id'] || !is_numeric($_GET['id'])){
+    if (!array_get($_GET, 'id') || !is_numeric($_GET['id'])){
         abort(404);
     }
 
@@ -14,13 +14,14 @@
 
     $reviews = dbGetReviewsByProduct($dbConnection, $_GET['id']);
 
-    $content =
-        view('parts/header',
+    $header = view('parts/header',
         [
-            'modeLink' => $modeLink,
-            'modeMess' => $modeMess,
-            'title' => $title,
-        ]) .
+            'menuList' => getMainMenuList(''),
+            'title' => $product['name'],
+        ]
+    );
+
+    $content =
         view('parts/product',
         [
             'title' => $title,

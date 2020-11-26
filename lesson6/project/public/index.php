@@ -27,13 +27,28 @@ require  HELPERS . 'helper.php';
 require HELPERS . 'database.php';
 $dbConnection = dbConnect();
 
-$uri = explode('/', $_SERVER['REQUEST_URI']);
+$uri = array_values(
+        array_filter(
+            explode('/',
+                explode('?',
+                    $_SERVER['REQUEST_URI'])
+                [0]),
+            fn($el) => boolval($el)
+        ));
 
-$action = isset($uri[1]) && $uri[1] ? $uri[1] : 'home';
+$i = 0;
 
-$filePath = ACTIONS . $action . '.php';
+$currentAction = array_get($uri, 0, 'home');
+$filePath = ACTIONS . $currentAction;
 
-if (!file_exists($filePath)){
+if (is_dir($filePath)){
+
+    $filePath .= '/' . array_get($uri, 1, $currentAction);
+}
+
+$filePath .=  '.php';
+
+if (!file_exists($filePath) || is_dir($filePath)){
     abort(404);
 }
 

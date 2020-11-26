@@ -1,0 +1,5 @@
+20:31:50   Ошибка запроса к базе данных: 1146Table 'phpdb.catalog' doesn't exist
+20:42:36   Ошибка запроса к базе данных: 1146Table 'phpdb.catalog' doesn't exist
+20:42:43   Ошибка запроса к базе данных: 1146Table 'phpdb.catalog' doesn't exist
+20:43:02   Ошибка запроса к базе данных: 1146Table 'database.catalog' doesn't exist
+20:43:04   Ошибка запроса к базе данных: 1146Table 'database.catalog' doesn't exist

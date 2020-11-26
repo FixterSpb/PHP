@@ -4,7 +4,7 @@
 
 return [
     'host' => 'localhost',
-    'dbName' => 'phpdb',
+    'dbName' => 'database',
     'userName' => 'user',
     'password' => '123'
 ];
