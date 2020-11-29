@@ -13,6 +13,8 @@ define('CONFIG', DOC_ROOT . 'config/');
 define('DATA', DOC_ROOT . 'data/');
 define('LOGS', DATA . 'logs/');
 
+
+
 /*
  * Обе константы указывают в одну папку, однако для загрузки на локальный сервер
  * необходим полный путь, а для отображения на странице - относительный.
@@ -26,6 +28,11 @@ require  HELPERS . 'helper.php';
 
 require HELPERS . 'database.php';
 $dbConnection = dbConnect();
+
+if(!array_get($_COOKIE, 'hash_cart')){
+    $hash_cart = hash('sha256', date('U'));
+    setcookie('hash_cart', $hash_cart);
+}
 
 $uri = array_values(
         array_filter(

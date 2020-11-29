@@ -4,3 +4,13 @@ lesson7/
 lesson6/project/node_modules/
 
 *.json
+
+lesson6/project/server/data/logs/cart_json/
+
+lesson6/project/server/data/logs/database/
+
+lesson6/project/server/data/logs/delete_json/
+
+lesson6/project/server/data/logs/test/
+
+lesson6/project/server/data/logs/validatorJson/

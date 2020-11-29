@@ -1,5 +1,10 @@
+/* Больше не используется
 Vue.component('productItem',{
-    props: ['product'],
+    props:
+        [
+            'product',
+            'mode'
+        ],
     methods: {
         productDelete: function(id){
             return "location.href = '/edit/?id=" + id + "&action=delete'";
@@ -20,6 +25,10 @@ Vue.component('productItem',{
 });
 
 Vue.component('products-edit', {
+    props:
+    [
+      'mode'
+    ],
     data() {
         return {
             products: [],
@@ -38,8 +47,10 @@ Vue.component('products-edit', {
     template:
         `<div class="products-box">
             <h1 v-if="mode">Режим редактирования</h1>
-            <productItem v-for="item of products" :key="item.id" :product="item">
+            <productItem v-for="item of products" :key="item.id" :product="item" :mode="mode">
             </productItem>
             
        </div>`
 });
+
+*/

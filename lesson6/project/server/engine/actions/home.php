@@ -10,6 +10,9 @@
             'title' => 'Каталог товаров'
         ]
     );
-    $content = view('parts/products', []);
+    $content = view('parts/products',
+        [
+            'mode' => 'view'
+        ]);
 
 require PAGES . 'home.php';

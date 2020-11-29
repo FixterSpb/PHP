@@ -1,5 +1,5 @@
-<?php //var_dump($product) ?>
-<form enctype="multipart/form-data" method="post">
+
+<form class="formEditProduct" enctype="multipart/form-data" method="post">
     <?php if(isset($action)): ?>
         <input style="display: none" name="action" value="<?= $action ?>">
     <?php endif; ?>
@@ -67,4 +67,4 @@
     <script src="/js/showImg.js?ver=1.002"></script>
 
 </form>
-    <button href="/">Удалить продукт</button>
+<!--    <button href="/">Удалить продукт</button>-->

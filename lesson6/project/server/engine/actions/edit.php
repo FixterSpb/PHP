@@ -16,13 +16,13 @@
     $action = isset($get['action']) ? $get['action'] : $action;
 
     function showPageEdit($title, array $params){
-        $content = view('parts/header',
-                [
-                    'modeLink' => '/editMode',
-                    'modeMess' => "Список товаров",
-                    'title' => $title,
-                ]
-            ) . view('forms/editProduct', $params);
+        $header = view('parts/header',
+            [
+                'menuList' => getMainMenuList(),
+                'title' => $title,
+            ]
+        );
+        $content = view('forms/editProduct', $params);
         require PAGES . 'home.php';
         die;
     }

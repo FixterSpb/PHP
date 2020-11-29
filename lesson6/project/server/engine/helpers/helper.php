@@ -28,6 +28,20 @@ if(!function_exists('write_log')){
     }
 }
 
+if(!function_exists('array_log')){
+    function array_log($module, $errors){
+        write_log($module, array_toString($errors));
+    }
+}
+
+if(!function_exists('array_toString')){
+    function array_toString($arr){
+        return implode(PHP_EOL, array_map(
+            fn($key, $val) => "$key: $val",
+            array_keys($arr), $arr
+        ));
+    }
+}
 if(!function_exists('view')){
 
     /**
@@ -84,7 +98,8 @@ if(!function_exists('validate')){
 
 if(!function_exists('array_get')){
     function array_get(array $arr, $key, $default = null){
-        return isset($arr[$key]) ? $arr[$key] : $default;
+
+        return isset($arr[$key]) ? htmlspecialchars(strip_tags($arr[$key])) : $default;
     }
 }
 
@@ -96,6 +111,11 @@ if(!function_exists('getMainMenuList')){
                 'name'=> 'Каталог товаров',
                 'link' => '/',
                 'active' => $active === 'Каталог товаров',
+            ],
+            [
+                'name'=> 'Редактирование',
+                'link' => '/editmode',
+                'active' => $active === 'Редактирование',
             ],
             [
                 'name' => 'Войти',

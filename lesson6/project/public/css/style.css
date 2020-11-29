@@ -140,4 +140,42 @@ header {
   pointer-events: none;
 }
 
+.formEditProduct {
+  width: 400px;
+  margin: 0 auto;
+}
+.formEditProduct > input, .formEditProduct > textarea {
+  width: 90%;
+}
+
+.cart__empty {
+  font-style: italic;
+  text-align: center;
+}
+.cart__table {
+  border: 1px solid grey;
+  padding: 10px;
+  margin: 0 auto;
+}
+.cart__th {
+  padding: 0 20px;
+}
+.cart__td {
+  padding: 5px 5px;
+  border-bottom: 1px solid darkgrey;
+  text-align: center;
+}
+.cart__td-name {
+  text-align: left;
+}
+.cart__qty {
+  width: 50px;
+}
+.cart__total {
+  text-align: right;
+  padding-top: 10px;
+  padding-right: 15px;
+  font-size: 20px;
+}
+
 /*# sourceMappingURL=style.css.map */

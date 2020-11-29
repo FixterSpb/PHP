@@ -33,7 +33,7 @@ const app = new Vue({
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(data)
-            }).then(result => result.json())
+            }).then(result => result.json()) //.json()
                 .catch(error => {
                     console.log(error);
                 });

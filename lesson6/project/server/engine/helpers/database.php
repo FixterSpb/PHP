@@ -47,13 +47,24 @@
     }
 
     if (!function_exists('dbGetProducts')){
-        function dbGetProducts($link, $status = 'active'){
-            $query = "SELECT * FROM `products` WHERE `status` = '$status';";
+        function dbGetProducts($link, $where = ['status' => 'active']){
+            $whereStr = "";
+            if (!$where){
+                $where = '';
+            }else{
+                $whereStr = " WHERE " . implode(", ", array_map(function($key, $value)
+                {
+                    return "$key = '$value'";
+                }, array_keys($where), $where));
+            }
+
+            $query = "SELECT * FROM `products` $whereStr;";
             return correctPathImg($link, dbQuery($link, $query));
 
         }
     }
-
+/*
+    Больше не используется!
     if (!function_exists('dbGetAllProducts')){
         function dbGetAllProducts($link){
             $query = "SELECT * FROM `products`;";
@@ -61,7 +72,7 @@
 
         }
     }
-
+*/
     if(!function_exists('dbGetProductById')){
         function dbGetProductById($link, $id){
             $query = "SELECT * FROM `products` WHERE `id`=$id";
@@ -177,5 +188,90 @@
                         `desc`='{$data['desc']}',
                         `status`='{$data['status']}'
                          WHERE `id` = {$data['id']};");
+        }
+    }
+
+    //Работа с корзиной
+
+    if(!function_exists('dbGetCart')){
+
+        function dbGetCart($link, $id_cart){
+//            var_dump("SELECT `products`.`id`, `products`.`name`, `products`.`price`,
+//                              `cart`.`qty`  FROM `products`, `cart`
+//                              WHERE `cart`.`id_cart` = $id_cart AND `products`.`id` = `cart`.`id_product`;");
+            return dbQuery($link,
+                "SELECT `products`.`id`, `products`.`name`, `products`.`price`,
+                              `cart`.`qty`  FROM `products`, `cart` 
+                              WHERE `cart`.`id_cart` = $id_cart AND `products`.`id` = `cart`.`id_product`;"
+            );
+        }
+    }
+
+
+    if (!function_exists('dbAddToCart')){
+        function dbAddToCart($link, $id_cart, $id_product, $qty){
+            if($data = dbGetProdByIdFromCart($link, $id_cart, $id_product)){
+                $qty_old = array_get(array_shift($data), 'qty', 0);
+                if ($qty_old){
+                    $qty_new = $qty_old + $qty;
+                    $result =
+                        dbQuery($link,
+                            "UPDATE `cart` SET `qty` = $qty_new WHERE `id_cart` = $id_cart AND `id_product` = $id_product;"
+                        );
+                    return $result;
+                }
+            }
+
+            $result = dbQuery($link,
+                "INSERT INTO `cart` (`id_cart`, `id_product`, `qty`)
+                       VALUES ($id_cart, $id_product, $qty);"
+            );
+
+            return $result;
+        }
+    }
+
+    if(!function_exists('dbGetCart')){
+        function dbGetCart($link, $id){
+            return dbQuery($link,
+                "SELECT * FROM `cart` WHERE `id`=$id;"
+            );
+        }
+    }
+
+    if(!function_exists('dbGetProdByIdFromCart')){
+        function dbGetProdByIdFromCart($link, $id_cart, $id_product){
+            return dbQuery($link,
+                "SELECT * FROM `cart` WHERE `id_cart`= $id_cart AND `id_product` = $id_product;");
+        }
+    }
+
+    if(!function_exists('dbGetIdCart')){
+        function dbGetIdCart($link, $hash){
+            if(!$id = dbQuery($link,
+                "SELECT `id` FROM `carts` WHERE `hash_cart` = '$hash';"
+            )){
+                return dbAddCart($link, $hash);
+            }
+            return $id[0]['id'];
+        }
+    }
+
+    if(!function_exists('dbAddCart')) {
+        function dbAddCart($link, $hash_cart)
+        {
+            if (dbQuery($link,
+                "INSERT INTO `carts` (`hash_cart`) VALUES ('$hash_cart');"
+            )) {
+                return mysqli_insert_id($link);
+            }
+            return;
+        }
+    }
+
+    if(!function_exists('dbDeleteProdFromCart')){
+        function dbDeleteProdFromCart($link, $id_cart, $id_product){
+//            echo "id cart: ", $id_cart, ' id product: ', $id_product, "\n<br>";
+            return dbQuery($link, "DELETE FROM `cart` WHERE `id_cart` = $id_cart AND `id_product` = $id_product;");
         }
     }

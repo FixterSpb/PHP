@@ -13,7 +13,7 @@
             $result = dbGetProducts($dbConnection);
             break;
         case 'allProducts':
-            $result = dbGetAllProducts($dbConnection);
+            $result = dbGetProducts($dbConnection, []);
             break;
         default:
             abort(404);
