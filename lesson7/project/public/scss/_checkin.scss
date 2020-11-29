@@ -1,0 +1,20 @@
+.checkin{
+  &__form{
+    margin: 0 auto;
+    width: 300px;
+  }
+
+  &__input{
+    width: 300px;
+  }
+
+
+  &__submit{
+
+  }
+
+  &__error{
+    color: brown;
+    font-style: italic;
+  }
+}

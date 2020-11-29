@@ -1,0 +1,31 @@
+.login{
+
+     &__form{
+          margin: 0 auto;
+          width: 300px;
+     }
+
+     &__input{
+          width: 300px;
+     }
+
+     &__submit{
+          width: 100px;
+          margin: 5px 0;
+     }
+
+     &__checkin{
+          display: inline-block;
+          width: 190px;
+          text-align: right;
+     }
+
+     &__label{
+          margin-top: 10px;
+     }
+
+     &__error{
+          color: brown;
+          font-style: italic;
+     }
+}

@@ -275,3 +275,38 @@
             return dbQuery($link, "DELETE FROM `cart` WHERE `id_cart` = $id_cart AND `id_product` = $id_product;");
         }
     }
+
+    //Учётные записи
+
+    if(!function_exists('dbGetUserByName')){
+        function dbGetUserByName($link, $name){
+            $res = dbQuery($link,
+              "SELECT * FROM `users` WHERE `name` = '$name';"
+            );
+            if (is_array($res)) {
+                return array_shift($res);
+            }
+            return false;
+        }
+    }
+
+    if(!function_exists('dbGetUserByEmail')){
+        function dbGetUserByEmail($link, $email){
+            $res = dbQuery($link,
+                "SELECT * FROM `users` WHERE `email` = '$email';"
+            );
+
+            if (is_array($res)) {
+                return array_shift($res);
+            }
+            return false;
+        }
+    }
+    if(!function_exists('dbAddUserdbAddUser')){
+        function dbAddUser($link,$data){
+            return dbQuery($link,
+                "INSERT INTO `users` (`name`, `email`, `password`)
+                        VALUES ('{$data['userName']}', '{$data['email']}', '{$data['password']}');"
+            );
+        }
+    }

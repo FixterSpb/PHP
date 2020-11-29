@@ -42,6 +42,19 @@ if(!function_exists('array_toString')){
         ));
     }
 }
+
+if(!function_exists('array_clean')){
+    function array_clean(array $arr){
+        return array_map(function($item) {
+            if (is_array($item)) {
+                return array_clean($item);
+            }
+
+            return is_string($item) ? strip_tags(htmlspecialchars($item)) : $item;
+        }, $arr);
+    }
+}
+
 if(!function_exists('view')){
 
     /**
@@ -118,9 +131,9 @@ if(!function_exists('getMainMenuList')){
                 'active' => $active === 'Редактирование',
             ],
             [
-                'name' => 'Войти',
-                'link' => '/',
-                'active' => $active === 'Войти'
+                'name' => 'Вход',
+                'link' => '/login',
+                'active' => $active === 'Вход'
             ],
             [
                 'name' => 'Корзина',

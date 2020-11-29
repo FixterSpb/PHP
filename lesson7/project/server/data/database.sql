@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Ноя 29 2020 г., 15:50
+-- Время создания: Ноя 29 2020 г., 22:41
 -- Версия сервера: 8.0.19
 -- Версия PHP: 7.4.4
 
@@ -159,6 +159,28 @@ INSERT INTO `reviews` (`id`, `id_product`, `id_auth`, `message`) VALUES
 (16, 5, 1, 'gzsrefgvz'),
 (17, 2, 11, 'dhrthtrdhbcf');
 
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `users`
+--
+
+CREATE TABLE `users` (
+  `id` int NOT NULL,
+  `name` varchar(64) NOT NULL,
+  `email` varchar(64) NOT NULL,
+  `password` varchar(256) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Дамп данных таблицы `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
+(1, 'Mladshev_Evgeniy', 'fixter.spb@gmail.com', '111'),
+(9, 'Mladshev_Evgeniy1', 'fixter.spb@gmail.com1', '$2y$10$v.xhPzJK3bHkZwRcywCx2eqWa78zgEJsuQ8.wZ.B3HQnKpfXEjKWG'),
+(10, 'Mladshev_Evgeniy2', 'fixter.spb@gmail.com2', '$2y$10$qm7sxP/ojb4F6Ah3/tpdS.wzPvaD7wwjLPuqWFlQZ4d.i9ETVaddG');
+
 --
 -- Индексы сохранённых таблиц
 --
@@ -196,6 +218,13 @@ ALTER TABLE `reviews`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
@@ -228,6 +257,12 @@ ALTER TABLE `products`
 --
 ALTER TABLE `reviews`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT для таблицы `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

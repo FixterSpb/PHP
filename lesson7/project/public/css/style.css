@@ -178,4 +178,64 @@ header {
   font-size: 20px;
 }
 
+.login__form {
+  margin: 0 auto;
+  width: 300px;
+}
+.login__input {
+  width: 300px;
+}
+.login__submit {
+  width: 100px;
+  margin: 5px 0;
+}
+.login__checkin {
+  display: inline-block;
+  width: 190px;
+  text-align: right;
+}
+.login__label {
+  margin-top: 10px;
+}
+.login__error {
+  color: brown;
+  font-style: italic;
+}
+
+.checkin__form {
+  margin: 0 auto;
+  width: 300px;
+}
+.checkin__input {
+  width: 300px;
+}
+.checkin__error {
+  color: brown;
+  font-style: italic;
+}
+
+.login__form {
+  margin: 0 auto;
+  width: 300px;
+}
+.login__input {
+  width: 300px;
+}
+.login__submit {
+  width: 100px;
+  margin: 5px 0;
+}
+.login__checkin {
+  display: inline-block;
+  width: 190px;
+  text-align: right;
+}
+.login__label {
+  margin-top: 10px;
+}
+.login__error {
+  color: brown;
+  font-style: italic;
+}
+
 /*# sourceMappingURL=style.css.map */
