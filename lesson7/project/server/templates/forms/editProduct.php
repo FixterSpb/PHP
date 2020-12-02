@@ -64,7 +64,4 @@
 
     <button type="submit">Сохранить</button>
 
-    <script src="/js/showImg.js?ver=1.002"></script>
-
 </form>
-<!--    <button href="/">Удалить продукт</button>-->

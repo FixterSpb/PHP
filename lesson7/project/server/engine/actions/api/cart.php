@@ -8,12 +8,10 @@
     function getData()
     {
         $validator = require ENGINE . 'validators/json.php';
-        $stream = fopen('php://input', 'r');
-        if (!$jData = fread($stream, 1024)) {
+        if (!$jData = file_get_contents('php://input')) {
             write_log('cart_json', "Ошибка передачи данных");
             errorJSON('Ошибка передачи данных 1');
         }
-        fclose($stream);
 
 
         if (!$data = json_decode($jData, true)) {

@@ -12,7 +12,13 @@ Vue.component('productItem',{
     methods: {
       addToCart(){
           this.$root.putJSON('/api/cart/', {id: this.product.id, quantity: 1})
-              .then(data => console.dir(data));
+              .then(data => {
+                  if (data.result === 0){
+                      this.$root.$refs.cartCounter.showCount = data.data.countCart;
+                  }
+                  console.dir(data);
+                  console.dir(this);
+              });
           // return console.dir(this.$parent);
       },
         deleteProduct(){

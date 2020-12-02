@@ -2,6 +2,12 @@
 
     require HELPERS . 'helper.php';
 
+    if(!function_exists('dbEscape')){
+    function dbEscape($link, $val){
+        return mysqli_real_escape_string($link, (string)trim(htmlspecialchars(strip_tags($val))));
+    }
+}
+
     if (!function_exists('dbConnect')){
         function dbConnect(){
             $dbConfig = require CONFIG . 'database.php';
@@ -140,12 +146,6 @@
         }
     }
 
-    if(!function_exists('dbEscape')){
-        function dbEscape($link, $val){
-            return mysqli_real_escape_string($link, (string)trim(htmlspecialchars(strip_tags($val))));
-        }
-    }
-
     if(!function_exists('dbCreateProduct')){
         function dbCreateProduct($link, $data){
 //            echo "INSERT INTO `products`
@@ -207,7 +207,6 @@
         }
     }
 
-
     if (!function_exists('dbAddToCart')){
         function dbAddToCart($link, $id_cart, $id_product, $qty){
             if($data = dbGetProdByIdFromCart($link, $id_cart, $id_product)){
@@ -254,6 +253,15 @@
                 return dbAddCart($link, $hash);
             }
             return $id[0]['id'];
+        }
+    }
+
+    if(!function_exists('dbGetCountFromCart')){
+        function dbGetCountFromCart($link, $id_cart){
+            $res = dbQuery($link,
+                "SELECT * FROM `cart` WHERE `id_cart` = $id_cart;"
+            );
+            return sizeof($res);
         }
     }
 

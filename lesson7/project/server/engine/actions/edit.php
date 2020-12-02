@@ -23,7 +23,7 @@
             ]
         );
         $content = view('forms/editProduct', $params);
-        require PAGES . 'home.php';
+        require PAGES . 'editProduct.php';
         die;
     }
 

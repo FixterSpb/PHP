@@ -90,11 +90,12 @@ Vue.component('cart', {
           return this.number++;
       },
       update(){
-          this.$parent.getJSON('api/cart')
+          this.$parent.getJSON('/api/cart')
               .then(data => {
                   if(data.result === 0) {
                       this.empty = data.data.length === 0;
                       this.products = [];
+                      this.$root.$refs.cartCounter.showCount = data.data.length;
                       for (let el of data.data) {
                           this.products.push(el);
                       }

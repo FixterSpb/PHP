@@ -18,8 +18,8 @@
     }
 
 
-    if(!$result = dbGetProdByIdFromCart($dbConnection, $id_cart, $id)[0]){
+    if(!$result = dbGetCountFromCart($dbConnection, $id_cart)){
         errorJSON('Ошибка базы данных');
     }
 
-    answerJSON([$result]);
+    okJSON(['countCart' => $result]);

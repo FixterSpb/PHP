@@ -136,7 +136,7 @@ if(!function_exists('getMainMenuList')){
                 'active' => $active === 'Вход'
             ],
             [
-                'name' => 'Корзина',
+                'name' => view('parts/cartCounter', []),
                 'link' => '/cart',
                 'active' => $active === 'Корзина'
             ],

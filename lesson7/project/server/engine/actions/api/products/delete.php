@@ -2,12 +2,10 @@
 
     $validator = require ENGINE . 'validators/json.php';
 
-    $stream = fopen('php://input', 'r');
-    if (!$id = fread($stream, 1024)){
+    if (!$id = file_get_contents('php://input')){
         write_log('delete_json', "Ошибка передачи данных");
         errorJSON('Ошибка передачи данных');
     }
-    fclose($stream);
 
     if(!$data = json_decode($id, true)){
         write_log('delete_json', "Ошибка передачи данных");
