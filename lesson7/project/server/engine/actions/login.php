@@ -10,9 +10,17 @@
             if(!password_verify($post['password'], $user['password'])){
                 $errors['auth'] = "Неверная пара Логин - Пароль!";
             }else{
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['user_name'] = $user['name'];
+                $_SESSION['permission'] = $user['permission'];
                 header("Location: /office");
             }
         }
+    }
+
+    if(array_get($_SESSION, 'error')){
+        $errors['permission'] = $_SESSION['error'];
+        unset($_SESSION['error']);
     }
     $header = view('parts/header',
         [

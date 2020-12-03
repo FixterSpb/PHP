@@ -24,6 +24,8 @@ define('LOGS', DATA . 'logs/');
 define('UPLOAD_IMG', '/img/');
 define('UPLOAD_FILE', __DIR__ . UPLOAD_IMG);
 
+session_start();
+
 require  HELPERS . 'helper.php';
 
 require HELPERS . 'database.php';

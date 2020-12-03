@@ -118,29 +118,80 @@ if(!function_exists('array_get')){
 
 if(!function_exists('getMainMenuList')){
     function getMainMenuList($active = null){
-        return
-        [
+
+        $default =  [
             [
-                'name'=> 'Каталог товаров',
+                'name' => 'Каталог товаров',
                 'link' => '/',
                 'active' => $active === 'Каталог товаров',
-            ],
-            [
-                'name'=> 'Редактирование',
-                'link' => '/editmode',
-                'active' => $active === 'Редактирование',
-            ],
-            [
-                'name' => 'Вход',
-                'link' => '/login',
-                'active' => $active === 'Вход'
             ],
             [
                 'name' => view('parts/cartCounter', []),
                 'link' => '/cart',
                 'active' => $active === 'Корзина'
             ],
+            [
+                'name' => 'Вход',
+                'link' => '/login',
+                'active' => $active === 'Вход'
+            ],
 
         ];
+        if (!array_get($_SESSION, 'permission')) {
+            return $default;
+
+        }else{
+            switch ($_SESSION['permission']) {
+                case "user":
+                    return
+                        [
+                            [
+                                'name' => 'Каталог товаров',
+                                'link' => '/',
+                                'active' => $active === 'Каталог товаров',
+                            ],
+                            [
+                                'name' => view('parts/cartCounter', []),
+                                'link' => '/cart',
+                                'active' => $active === 'Корзина'
+                            ],
+                            [
+                                'name' => 'Личный кабинет',
+                                'link' => '/office',
+                                'active' => $active === 'Личный кабинет'
+                            ],
+                            [
+                                'name' => 'Выход',
+                                'link' => '/logout',
+                                'active' => $active === 'Выход'
+                            ],
+                        ];
+                case "admin":
+                    return
+                        [
+                            [
+                                'name' => 'Каталог товаров',
+                                'link' => '/',
+                                'active' => $active === 'Каталог товаров',
+                            ],
+                            [
+                                'name' => 'Редактирование',
+                                'link' => '/editmode',
+                                'active' => $active === 'Редактирование',
+                            ],
+                            [
+                                'name' => "Заказы",
+                                'link' => '/cart',
+                                'active' => $active === 'Заказы'
+                            ],
+                            [
+                                'name' => 'Выход',
+                                'link' => '/logout',
+                                'active' => $active === 'Выход'
+                            ],
+
+                        ];
+            }
+        }
     }
 }

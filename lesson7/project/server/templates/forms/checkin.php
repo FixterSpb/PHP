@@ -16,6 +16,18 @@
     <?php endif; ?>
     <br>
 
+    <label for="email" class="checkin__label">E-mail:</label>
+    <br>
+    <input type="email" name="email" class="checkin__input" placeholder="E-mail"
+           value="<?=isset($data['email']) ? $data['email'] : '' ?>">
+    <?php if(isset($errors['email'])): ?>
+        <p class="checkin__error"><?= $errors['email'] ?></p>
+    <?php else: ?>
+        <br>
+        <br>
+    <?php endif; ?>
+    <br>
+
     <label for="password" class="checkin__label">Пароль:</label>
     <br>
     <input type="password" name="password" class="checkin__input" placeholder="Пароль">
@@ -38,16 +50,6 @@
     <?php endif; ?>
     <br>
 
-    <label for="email" class="checkin__label">E-mail:</label>
-    <br>
-    <input type="email" name="email" class="checkin__input" placeholder="E-mail"
-           value="<?=isset($data['email']) ? $data['email'] : '' ?>">
-    <?php if(isset($errors['email'])): ?>
-        <p class="checkin__error"><?= $errors['email'] ?></p>
-    <?php else: ?>
-        <br>
-        <br>
-    <?php endif; ?>
-    <br>
+
     <button class="checkin__submit">Зарегистрироваться</button>
 </form>

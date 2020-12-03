@@ -1,5 +1,8 @@
 
     <form class="login__form" method="post">
+        <?php if (isset($errors['permission'])): ?>
+            <h3 class="login__error"><?= $errors['permission'] ?></h3>
+        <?php endif ?>
         <?php if(isset($errors['auth'])): ?>
             <h3 class="login__error"><?= $errors['auth'] ?></h3>
         <?php endif; ?>

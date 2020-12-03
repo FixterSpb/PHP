@@ -2,8 +2,7 @@
 
     require HELPERS . 'json.php';
 
-    $hash_cart = array_get($_COOKIE, 'hash_cart');
-    $id_cart = dbGetIdCart($dbConnection, $hash_cart);
+    $id_cart = dbGetIdCart($dbConnection);
 
     function getData()
     {
@@ -33,7 +32,8 @@
             require 'cart/put.php';
             break;
         case 'GET':
-            okJSON(dbGetCart($dbConnection, $id_cart));
+
+            require 'cart/get.php';
             break;
         case 'DELETE':
             $data = getData();
