@@ -1,0 +1,29 @@
+06:01:32   Ошибка запроса к базе данных: 1054Unknown column 'hash_cart' in 'where clause'
+06:01:32   Ошибка запроса к базе данных: 1054Unknown column 'hash_cart' in 'field list'
+06:01:32   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `id_product` = 6' at line 1
+06:01:32   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `id_product` = 6' at line 1
+06:01:32   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', 6, 1)' at line 2
+06:01:33   Ошибка запроса к базе данных: 1054Unknown column 'hash_cart' in 'where clause'
+06:01:33   Ошибка запроса к базе данных: 1054Unknown column 'hash_cart' in 'field list'
+06:01:33   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `products`.`id` = `cart`.`id_product`' at line 3
+06:01:36   Ошибка запроса к базе данных: 1054Unknown column 'hash_cart' in 'where clause'
+06:01:36   Ошибка запроса к базе данных: 1054Unknown column 'hash_cart' in 'field list'
+06:01:36   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `id_product` = 5' at line 1
+06:01:36   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `id_product` = 5' at line 1
+06:01:36   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', 5, 1)' at line 2
+06:01:37   Ошибка запроса к базе данных: 1054Unknown column 'hash_cart' in 'where clause'
+06:01:37   Ошибка запроса к базе данных: 1054Unknown column 'hash_cart' in 'field list'
+06:01:37   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `products`.`id` = `cart`.`id_product`' at line 3
+06:01:43   Ошибка запроса к базе данных: 1054Unknown column 'hash_cart' in 'where clause'
+06:01:43   Ошибка запроса к базе данных: 1054Unknown column 'hash_cart' in 'field list'
+06:01:43   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `products`.`id` = `cart`.`id_product`' at line 3
+06:02:00   Ошибка запроса к базе данных: 1054Unknown column 'hash_cart' in 'where clause'
+06:02:00   Ошибка запроса к базе данных: 1054Unknown column 'hash_cart' in 'field list'
+06:02:00   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `id_product` = 2' at line 1
+06:02:00   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `id_product` = 2' at line 1
+06:02:00   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', 2, 1)' at line 2
+06:02:00   Ошибка запроса к базе данных: 1054Unknown column 'hash_cart' in 'where clause'
+06:02:00   Ошибка запроса к базе данных: 1054Unknown column 'hash_cart' in 'field list'
+06:02:00   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `id_product` = 2' at line 1
+06:02:00   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `id_product` = 2' at line 1
+06:02:00   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', 2, 1)' at line 2

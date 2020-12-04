@@ -1,0 +1,44 @@
+<?php
+
+    require HELPERS . 'json.php';
+
+    $id_cart = dbGetIdCart($dbConnection);
+
+    function getData()
+    {
+        $validator = require ENGINE . 'validators/json.php';
+        if (!$jData = file_get_contents('php://input')) {
+            write_log('cart_json', "Ошибка передачи данных");
+            errorJSON('Ошибка передачи данных 1');
+        }
+
+
+        if (!$data = json_decode($jData, true)) {
+            write_log('cart_json', "Ошибка передачи данных");
+            errorJSON('Ошибка передачи данных');
+        };
+
+
+        if ($errors = $validator[$_SERVER['REQUEST_METHOD']]($data)) {
+            array_log('cart_json', $errors);
+            errorJSON(array_toString($errors));
+        }
+
+        return $data;
+    }
+    switch ($_SERVER['REQUEST_METHOD']){
+        case 'PUT':
+            $data = getData();
+            require 'put.php';
+            break;
+        case 'GET':
+
+            require 'get.php';
+            break;
+        case 'DELETE':
+            $data = getData();
+            require 'delete.php';
+            break;
+        default:
+            errorJSON('Ошибка метода запроса: ' . $_SERVER['REQUEST_METHOD']);
+    }

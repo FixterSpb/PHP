@@ -1,0 +1,52 @@
+09:17:46   Ошибка запроса к базе данных: 1062Duplicate entry '12' for key 'carts.user_id'
+09:17:46   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `id_product` = 2' at line 1
+09:17:46   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `id_product` = 2' at line 1
+09:17:46   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', 2, 1)' at line 2
+09:19:00   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `id_product` = 1' at line 1
+09:19:00   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `id_product` = 1' at line 1
+09:19:00   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', 1, 1)' at line 2
+09:26:01   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `products`.`id` = `cart`.`id_product`' at line 3
+09:26:03   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `products`.`id` = `cart`.`id_product`' at line 3
+09:26:03   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `products`.`id` = `cart`.`id_product`' at line 3
+09:26:04   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `products`.`id` = `cart`.`id_product`' at line 3
+09:26:17   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `id_product` = 1' at line 1
+09:26:17   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `id_product` = 1' at line 1
+09:26:17   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', 1, 1)' at line 2
+09:30:02   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `id_product` = 4' at line 1
+09:30:02   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `id_product` = 4' at line 1
+09:30:02   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', 4, 1)' at line 2
+09:47:59   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `products`.`id` = `cart`.`id_product`' at line 3
+09:54:31   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `products`.`id` = `cart`.`id_product`' at line 3
+10:05:01   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `products`.`id` = `cart`.`id_product`' at line 3
+10:05:01   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `products`.`id` = `cart`.`id_product`' at line 3
+10:05:03   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `products`.`id` = `cart`.`id_product`' at line 3
+10:40:04   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+10:40:04   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', 1)' at line 2
+10:40:05   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+10:40:05   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', 1)' at line 2
+10:40:05   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+10:40:05   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', 1)' at line 2
+10:40:07   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+10:40:07   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', 1)' at line 2
+10:40:07   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+10:40:07   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', 1)' at line 2
+10:40:08   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+10:40:08   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', 1)' at line 2
+10:44:55   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+10:44:56   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+10:44:57   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+10:44:59   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+10:45:00   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+10:45:00   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+10:45:06   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+10:45:26   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+10:45:27   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+10:45:33   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+10:45:48   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+10:48:34   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+10:48:34   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+10:48:38   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+10:48:38   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+10:49:55   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+10:49:55   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+10:50:18   Ошибка запроса к базе данных: 1064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
