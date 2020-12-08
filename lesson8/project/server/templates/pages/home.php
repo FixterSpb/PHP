@@ -17,6 +17,8 @@
     <script src="/js/Products.js?ver=<?=date('U')?>"></script>
     <script src="/js/CartCounter.js?ver=<?=date('U')?>"></script>
     <script src="/js/OrderCreate.js?ver=<?=date('U')?>"></script>
+    <script src="/js/OrderList.js?ver=<?=date('U')?>"></script>
+    <script src="/js/Order.js?ver=<?=date('U')?>"></script>
 
     <script src="/js/Cart.js?ver=<?=date('U')?>"></script>
     <script src="/js/main.js?ver=<?=date('U')?>"></script>

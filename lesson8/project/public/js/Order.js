@@ -1,23 +1,8 @@
-Vue.component('orderProductItem',{
-    props:
-        [
-            'product',
-        ],
+Vue.component('order', {
 
-    mounted(){
-        console.dir(this.product);
-    },
-
-    template:
-        `<tr class="cart__tr">
-            <td class="cart__td cart__td-name" :title="product.name">{{ product.name }}</td>
-            <td class="cart__td cart__td-price">{{ product.price }}</td>
-            <td class="cart__td cart__td-qty">{{ product.qty }}</td>
-            <td class="cart__td cart__td-amount">{{ product.qty * product.price  }}</td>
-        </tr>`
-});
-
-Vue.component('order-create', {
+    props:[
+        'id',
+    ],
 
     data() {
         return {
@@ -32,19 +17,19 @@ Vue.component('order-create', {
     },
 
     methods:{
-      update(){
-          this.$parent.getJSON('/api/orderCreate')
-              .then(result => {
-                  if (result.result === 0) {
-                      console.dir(result.data);
-                    result.data.forEach(item => {
-                            this.products.push(item)
-                            this.total += item.qty * item.price;
-                        }
-                    )
-                  }
-              });
-      },
+        update(){
+            this.$parent.getJSON('/api/orderItem?id=' + this.id)
+                .then(result => {
+                    if (result.result === 0) {
+                        console.dir(result.data);
+                        result.data.forEach(item => {
+                                this.products.push(item)
+                                this.total += item.qty * item.price;
+                            }
+                        )
+                    }
+                });
+        },
         submit() {
             this.$parent.postJSON('/api/orders/create', {comment: this.comment})
                 .then(result => {
@@ -73,9 +58,9 @@ Vue.component('order-create', {
                 </tr>    
             </table>
             <br>
-            <label for="comment">Комментарий</label>
+            <p>Комментарий:</p>
             <br>
-            <textarea name="comment" cols="100" rows="5" v-model.text="comment"></textarea>
+            <p>{{ comment }}</p>
             <br>
             <button @click.prevent="submit()">Подтвердить</button>
             

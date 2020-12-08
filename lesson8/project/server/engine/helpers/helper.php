@@ -156,6 +156,11 @@ if(!function_exists('getMainMenuList')){
                                 'active' => $active === 'Корзина'
                             ],
                             [
+                                'name' => 'Заказы',
+                                'link' => '/orders',
+                                'active' => $active === 'Заказы'
+                            ],
+                            [
                                 'name' => 'Личный кабинет',
                                 'link' => '/office',
                                 'active' => $active === 'Личный кабинет'
@@ -217,5 +222,31 @@ if(!function_exists('loadModel')){
         }
 
         return $result;
+    }
+}
+
+if(!function_exists('getDataJson')) {
+    function getDataJson()
+    {
+        require HELPERS . 'json.php';
+        $validator = require ENGINE . 'validators/json.php';
+        if (!$jData = file_get_contents('php://input')) {
+            write_log('cart_json', "Ошибка передачи данных");
+            errorJSON('Ошибка передачи данных 1');
+        }
+
+
+        if (!$data = json_decode($jData, true)) {
+            write_log('cart_json', "Ошибка передачи данных");
+            errorJSON('Ошибка передачи данных');
+        };
+
+
+        if ($errors = $validator[$_SERVER['REQUEST_METHOD']]($data)) {
+            array_log('cart_json', $errors);
+            errorJSON(array_toString($errors));
+        }
+
+        return $data;
     }
 }

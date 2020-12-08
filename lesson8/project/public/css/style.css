@@ -238,4 +238,29 @@ header {
   font-style: italic;
 }
 
+.order__table {
+  border: 1px solid grey;
+  padding: 10px;
+  margin: 0 auto;
+}
+.order__tr:hover {
+  background-color: cadetblue;
+}
+.order__th {
+  padding: 0 20px;
+}
+.order__td {
+  padding: 0;
+  border-bottom: 1px solid darkgrey;
+  text-align: center;
+}
+.order__td-name {
+  text-align: left;
+}
+.order__link {
+  color: black;
+  display: block;
+  padding: 5px;
+}
+
 /*# sourceMappingURL=style.css.map */

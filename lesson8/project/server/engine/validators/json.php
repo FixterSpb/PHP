@@ -48,6 +48,10 @@
         return $currentValidator['validate']($req, 'rulePut');
     };
 
+    $currentValidator['POST'] = function($req) use($currentValidator){
+        return [];
+    };
+
 
 
     return $currentValidator;

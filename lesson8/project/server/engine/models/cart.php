@@ -26,6 +26,13 @@
         return $cartModel['db']['queryAll']($sql);
     };
 
+    $cartModel['delete'] = function($cart_id) use($cartModel){
+        $db = $cartModel['db'];
+
+        $db['query']("DELETE FROM `cart` WHERE `id_cart` = $cart_id");
+        $db['query']("DELETE FROM `carts` WHERE `id` = $cart_id");
+    };
+
 //    $currentModel
 
     return $cartModel;

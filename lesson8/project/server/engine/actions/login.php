@@ -6,8 +6,10 @@
         $validator = require ENGINE . 'validators/login.php';
         $post = array_clean($_POST);
         if (!$errors = $validator['validate']($post)){
-            $user = dbGetUserByName($dbConnection, $post['userName']);
-            if(!password_verify($post['password'], $user['password'])){
+            if(!$user = dbGetUserByName($dbConnection, $post['userName'])){
+                $errors['auth'] = "Неверная пара Логин - Пароль!";
+
+            }elseif(!password_verify($post['password'], $user['password'])){
                 $errors['auth'] = "Неверная пара Логин - Пароль!";
             }else{
                 $_SESSION['user_id'] = $user['id'];

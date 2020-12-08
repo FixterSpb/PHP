@@ -1,0 +1,34 @@
+.order {
+  &__table{
+    border: 1px solid grey;
+    padding: 10px;
+    margin: 0 auto;
+  }
+
+  &__tr:hover{
+    background-color: cadetblue;
+  }
+
+  &__th{
+    padding: 0 20px;
+  }
+  &__td{
+    padding: 0;
+    border-bottom: 1px solid darkgrey;
+    text-align: center;
+
+    &-name{
+      text-align: left;
+    }
+  }
+
+  &__link{
+    color: black;
+    display: block;
+    padding: 5px;
+  }
+
+  &__link:active{
+
+  }
+}

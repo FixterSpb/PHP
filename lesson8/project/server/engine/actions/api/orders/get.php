@@ -4,10 +4,8 @@
 
     $user_id = $_SESSION['user_id'];
 
-    $cart = loadModel('cart');
-    $cart_id = $cart['getId']($user_id);
-    if(!$products = $cart['getAll']($cart_id)){
-        abort(404);
-    }
+    $ordersModel = loadModel('order');
+    $orders = $ordersModel['getAllFromUser']($user_id);
 
-    okJSON((array)$products);
+//    var_dump($user_id);
+    okJSON($orders);

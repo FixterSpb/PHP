@@ -56,7 +56,7 @@ Vue.component('cartItem',{
             <td class="cart__td cart__td-name" :title="product.name">{{ product.name }}</td>
             <td class="cart__td cart__td-price">{{ product.price }}</td>
             <td class="cart__td cart__td-qty">
-                <input type="number" class="cart__qty" v-model.number="product.qty" max="100000" @focus="qtySave()" @blur="qtyChange()">
+                <input type="number" class="cart__qty" v-model.number="product.qty" min="1" max="100000" @focus="qtySave()" @blur="qtyChange()">
             </td>
             <td class="cart__td cart__td-amount">{{ calc }}</td>
             <td class="cart__td cart__delete"><button class="cart__bnDelete" @click.prevent="remove()">X</button></td>            
