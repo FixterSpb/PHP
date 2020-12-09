@@ -69,10 +69,12 @@
         return $order_id;
     };
 
-    $orderModel['getAllFromUser'] = function ($user_id = null) use($orderModel){
+    $orderModel['getAll'] = function ($user_id = null) use($orderModel){
         $db = $orderModel['db'];
 
-        $sql = "SELECT * FROM `orders`";
+        $sql = "SELECT `orders`.`id` as 'id', `orders`.`status`,
+                        `orders`.`total`, `users`.`name` FROM `orders`
+                INNER JOIN `users` ON `orders`.`user_id` = `users`.`id`";
         if ($user_id){
             $sql .= " WHERE `user_id` = $user_id";
         }
@@ -95,7 +97,7 @@
     $orderModel['getComment'] = function ($order_id = null) use($orderModel) {
         $db = $orderModel['db'];
         $sql = "SELECT `comment` FROM `orders` WHERE `id` = $order_id";
-        return $db['queryOne']($sql);
+        return $db['queryOne']($sql)['comment'];
     };
 
 

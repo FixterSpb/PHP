@@ -13,11 +13,12 @@ if(!array_get($_SESSION, 'user_name') || !array_get($_SESSION, 'user_id'))
     exit;
 }
 
-
+//$id = array_get($_GET, 'id');
+//$menuTitle = $id ? '':
 $header = view('parts/header',
     [
-        'menuList' => getMainMenuList('Заказы', 'user'),
-        'title' => 'Заказы',
+        'menuList' => getMainMenuList("Заказ № {$_GET['id']}" , 'user'),
+        'title' => "Заказ № {$_GET['id']}",
     ]);
 
 $content = view('parts/orders/orderItem', ['id' => $_GET['id']]);

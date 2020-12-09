@@ -22,11 +22,12 @@ Vue.component('order', {
                 .then(result => {
                     if (result.result === 0) {
                         console.dir(result.data);
-                        result.data.forEach(item => {
+                        result.data.products.forEach(item => {
                                 this.products.push(item)
                                 this.total += item.qty * item.price;
                             }
                         )
+                        this.comment = result.data.comment;
                     }
                 });
         },
@@ -62,7 +63,7 @@ Vue.component('order', {
             <br>
             <p>{{ comment }}</p>
             <br>
-            <button @click.prevent="submit()">Подтвердить</button>
+<!--            <button @click.prevent="submit()">Подтвердить</button>-->
             
         </div>`
 });

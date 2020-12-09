@@ -10,6 +10,5 @@
 
     $result = $order['getOne']($_GET['id']);
     $comment = $order['getComment']($_GET['id']);
-    $result['comment'] = $comment;
 
-    okJSON($result);
+    okJSON(['products' => $result, 'comment' => $comment]);

@@ -2,10 +2,14 @@
 
     require HELPERS . 'json.php';
 
-    $user_id = $_SESSION['user_id'];
+    if($_SESSION['permission'] === 'admin'){
+       $user_id = null;
+    }else {
+        $user_id = $_SESSION['user_id'];
+    }
 
     $ordersModel = loadModel('order');
-    $orders = $ordersModel['getAllFromUser']($user_id);
+    $orders = $ordersModel['getAll']($user_id);
 
 //    var_dump($user_id);
     okJSON($orders);

@@ -186,7 +186,7 @@ if(!function_exists('getMainMenuList')){
                             ],
                             [
                                 'name' => "Заказы",
-                                'link' => '/ordersAdmin',
+                                'link' => '/orders/admin',
                                 'active' => $active === 'Заказы'
                             ],
                             [

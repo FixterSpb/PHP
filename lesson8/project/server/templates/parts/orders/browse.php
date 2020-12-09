@@ -1,1 +1,1 @@
-<order-list></order-list>
+<order-list <?= isset($action) ? "action='$action'" : "" ?>></order-list>
